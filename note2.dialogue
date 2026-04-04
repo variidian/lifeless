@@ -1,5 +1,5 @@
 ~ start
-Player: A note? let's see what it says.
-Player: "Gunshots are now firing."
-Player: Huh.
+- A note? let's see what it says.
+	Player: "Gunshots are now firing."
+	Player: Huh.
 => END

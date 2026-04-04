@@ -28,6 +28,8 @@ modulate_color = Color(0.5429818, 0.5429818, 0.54298174, 1)
 
 [resource]
 default_font = ExtResource("1_e1x85")
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_e1x85")
 Button/styles/disabled = null
 Button/styles/focus = SubResource("StyleBoxTexture_e1x85")
 Button/styles/hover = SubResource("StyleBoxTexture_vj6dk")
