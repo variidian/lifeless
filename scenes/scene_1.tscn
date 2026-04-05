@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cvclqgxdpc7ui"]
+[gd_scene load_steps=9 format=4 uid="uid://cvclqgxdpc7ui"]
 
 [ext_resource type="Script" uid="uid://bfry1y1f6f8en" path="res://scenes/scene1.gd" id="1_lki8s"]
 [ext_resource type="Texture2D" uid="uid://n43xrynmu8as" path="res://assets/campfire.png" id="1_ta4h7"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://chi7hmi0qp7mw" path="res://tilemap.tres" id="3_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://dr0iy7kq05rba" path="res://scenes/ghost.tscn" id="5_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://bu0c7ljb0tuej" path="res://note.tscn" id="6_t6bmd"]
+[ext_resource type="PackedScene" uid="uid://dq5otiokb64bh" path="res://pause.tscn" id="7_d7a6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6bmd"]
 size = Vector2(160, 324.5)
@@ -36,5 +37,7 @@ position = Vector2(1055, 535)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(1478, 81)
 shape = SubResource("RectangleShape2D_t6bmd")
+
+[node name="pause" parent="." instance=ExtResource("7_d7a6c")]
 
 [connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]

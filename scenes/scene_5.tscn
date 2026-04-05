@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://p4qbqgahv8bd"]
+[gd_scene load_steps=6 format=3 uid="uid://p4qbqgahv8bd"]
 
 [ext_resource type="Texture2D" uid="uid://b6racrsgebefp" path="res://assets/old_building_Bg.png" id="1_mxbsg"]
 [ext_resource type="Script" uid="uid://bdw16mhrwiul4" path="res://scenes/scene_5.gd" id="1_vlsbu"]
 [ext_resource type="PackedScene" uid="uid://dr0iy7kq05rba" path="res://scenes/ghost.tscn" id="3_bihcb"]
 [ext_resource type="AudioStream" uid="uid://ckfxgoq2rj7tp" path="res://assets/Sketchbook 2024-11-13.ogg" id="4_bihcb"]
+[ext_resource type="PackedScene" uid="uid://dq5otiokb64bh" path="res://pause.tscn" id="5_88xdn"]
 
 [node name="scene_5" type="Node2D"]
 script = ExtResource("1_vlsbu")
@@ -18,5 +19,6 @@ position = Vector2(1322, 932)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_bihcb")
 autoplay = true
-stream_paused = true
 parameters/looping = true
+
+[node name="pause" parent="." instance=ExtResource("5_88xdn")]

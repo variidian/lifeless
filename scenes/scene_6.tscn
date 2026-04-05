@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bokgq1lpb888f"]
+[gd_scene load_steps=11 format=4 uid="uid://bokgq1lpb888f"]
 
 [ext_resource type="Script" uid="uid://dcuieva14gp23" path="res://scenes/scene_6.gd" id="1_8t33k"]
 [ext_resource type="Texture2D" uid="uid://b6racrsgebefp" path="res://assets/old_building_Bg.png" id="1_j61ln"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://c511cin7eo5wu" path="res://scenes/to_scene_7.gd" id="5_kabkq"]
 [ext_resource type="PackedScene" uid="uid://d2cms18mkfwv0" path="res://player.tscn" id="6_4dusf"]
 [ext_resource type="PackedScene" uid="uid://b5af0ybcpi5sl" path="res://scenes/note4.tscn" id="7_kabkq"]
+[ext_resource type="PackedScene" uid="uid://dq5otiokb64bh" path="res://pause.tscn" id="8_4dusf"]
 
 [sub_resource type="Curve2D" id="Curve2D_8t33k"]
 _data = {
@@ -47,5 +48,7 @@ position = Vector2(154, 825)
 
 [node name="Area2D" parent="." instance=ExtResource("7_kabkq")]
 position = Vector2(2283, 988)
+
+[node name="pause" parent="." instance=ExtResource("8_4dusf")]
 
 [connection signal="area_entered" from="to_scene7" to="to_scene7" method="_on_area_entered"]

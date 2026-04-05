@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq5otiokb64bh"]
+
+[ext_resource type="Theme" uid="uid://sy28c4awwmk1" path="res://theme.tres" id="1_45vjg"]
+[ext_resource type="Script" uid="uid://cfm38cei8jtv6" path="res://pause.gd" id="1_aq7p1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq7p1"]
+bg_color = Color(0.13501206, 0.13501206, 0.135012, 1)
+corner_radius_top_left = 20
+
+[sub_resource type="Animation" id="Animation_aq7p1"]
+resource_name = "pause"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1107, -1601), Vector2(1107, -40)]
+}
+
+[sub_resource type="Animation" id="Animation_6eyaj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1107, -1601)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8u653"]
+_data = {
+&"RESET": SubResource("Animation_6eyaj"),
+&"pause": SubResource("Animation_aq7p1")
+}
+
+[node name="pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aq7p1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = 1107.0
+offset_top = -1601.0
+offset_right = 2513.0
+offset_bottom = -45.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aq7p1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 123.0
+offset_right = 1601.0
+offset_bottom = 375.0
+theme = ExtResource("1_45vjg")
+theme_override_font_sizes/normal_font_size = 150
+text = "game paused
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="unpause" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 435.0
+offset_right = 1407.0
+offset_bottom = 709.0
+focus_neighbor_top = NodePath("../start2")
+focus_neighbor_bottom = NodePath("../start")
+theme = ExtResource("1_45vjg")
+
+[node name="start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 769.0
+offset_right = 1408.0
+offset_bottom = 1043.0
+focus_neighbor_top = NodePath("../unpause")
+focus_neighbor_bottom = NodePath("../start2")
+theme = ExtResource("1_45vjg")
+
+[node name="start2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 1105.0
+offset_right = 1409.0
+offset_bottom = 1379.0
+focus_neighbor_top = NodePath("../start")
+focus_neighbor_bottom = NodePath("../unpause")
+theme = ExtResource("1_45vjg")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 482.0
+offset_right = 1373.0
+offset_bottom = 646.0
+theme = ExtResource("1_45vjg")
+text = "unpause"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 817.0
+offset_right = 1373.0
+offset_bottom = 981.0
+theme = ExtResource("1_45vjg")
+text = "quit"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 1148.0
+offset_right = 1373.0
+offset_bottom = 1312.0
+theme = ExtResource("1_45vjg")
+text = "restart"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+&"": SubResource("AnimationLibrary_8u653")
+}
+
+[connection signal="pressed" from="Panel/unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="Panel/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/start2" to="." method="_on_start_2_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
