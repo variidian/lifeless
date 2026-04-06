@@ -4,4 +4,6 @@ extends Area2D
 func _ready():
 	interactable.interact = _on_interact
 func _on_interact():
-	DialogueManager.show_dialogue_balloon(note_dialogue, "yes")
+	if e.i == false:
+		DialogueManager.show_dialogue_balloon(note_dialogue, "yes")
+		e.i = true

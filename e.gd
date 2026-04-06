@@ -13,6 +13,7 @@ var to_scene6: bool = false
 var to_scene9: bool = false
 var ghosthide: bool = false
 var over: bool = false
+var i = false
 func hideghost():
 	ghosthidden = true
 

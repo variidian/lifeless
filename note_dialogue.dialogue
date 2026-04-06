@@ -7,4 +7,5 @@ Player: Click M and up arrow or K together to dash upwards.
 Player: Shift to hold on to walls..
 Player: K or up arrow to climb up walls..
 Player: And E to interact.
+set e.i = false
 => END

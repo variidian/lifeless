@@ -1,4 +1,5 @@
 ~ start
 - A note? let's see what it says.
 	Player: "Everything destroyed."
+set e.i = false
 => END

@@ -2,4 +2,5 @@
 - A note? let's see what it says.
 	Player: "Gunshots are now firing."
 	Player: Huh.
+set e.i = false
 => END
